@@ -13,14 +13,16 @@ var cube = [6];
 	cube [4] = new Side (2, 1, 4, 3);
 	cube [5] = new Side (1, 2, 4, 3);
 	
-$(document).ready (function () {	
-	//console.log (cube);
-	
+$(document).ready (function () {
 	$('.num').click (function () {
 		var side = 'show-' + ((Math.round ((Math.random () * 100)) % 6) + 1).toString ();
 		$('#cube').removeClass ();
 		$('#cube').addClass (side);
 	});
+	$('.rot').click (function (e) {
+		rotation ($(e.target).prop ('class').replace ('rot turn', ''));
+	});
+	
 	$('.downContainer').on ('mouseover', function () {
 		$('.turnDown').css ('display', 'block');
 	});
@@ -46,16 +48,12 @@ $(document).ready (function () {
 	$('.upContainer').on ('mouseout', function () {
 		$('.turnUp').css ('display', 'none');
 	});
-	$('.rot').click (function (e) {
-		e.stopPropagation ();
-		rotation ($(e.target).prop ('class').replace ('rot turn', ''));
-	});
 });
 
 function rotation (direction) {
-	var css = $('#cube').prop ('class');
-	var currSide = parseInt (css.substring (css.indexOf ('-') + 1)) - 1 || 0;
-	var newCss = 'show-' + cube [currSide] [direction];
+	var oldClass = $('#cube').prop ('class');
+	var currSide = parseInt (oldClass.substring (oldClass.indexOf ('-') + 1)) - 1 || 0;
+	var newClass = 'show-' + cube [currSide] [direction];
 	$('#cube').removeClass ();
-	$('#cube').addClass (newCss);
+	$('#cube').addClass (newClass);
 }

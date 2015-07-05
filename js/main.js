@@ -7,7 +7,7 @@ var Side = function (up, down, left, right) {
 
 var cube = [6];
 	cube [0] = new Side (5, 6, 4, 3);
-	cube [1] = new Side (6, 5, 4, 3);
+	cube [1] = new Side (6, 5, 3, 4);
 	cube [2] = new Side (5, 6, 1, 2);
 	cube [3] = new Side (5, 6, 2, 1);
 	cube [4] = new Side (2, 1, 4, 3);
@@ -16,7 +16,7 @@ var cube = [6];
 $(document).ready (function () {	
 	//console.log (cube);
 	
-	$('.face').click (function () {
+	$('.num').click (function () {
 		var side = 'show-' + ((Math.round ((Math.random () * 100)) % 6) + 1).toString ();
 		$('#cube').removeClass ();
 		$('#cube').addClass (side);

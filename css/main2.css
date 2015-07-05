@@ -13,7 +13,7 @@
 
 .face {	
 	text-align: center;
-	padding-top: 67px;
+	margin: 67px;
 	font-size: 42px;
 }
 
@@ -80,7 +80,9 @@
 .show-6 {
 	transform: translateZ(-100px) rotateX(90deg);
 }
-
+.rot {
+	z-index: 50;
+}
 .downContainer {
 	position: absolute;
 	left: 0px;
@@ -97,6 +99,9 @@
 	height: 20px;
 	border-radius: 40px 40px 0px 0px;
 	background-color: #cecece;
+	background-image: url('../imgs/down.png');
+	background-repeat: no-repeat;
+	background-position: center;
 	display: none;
 }
 
@@ -117,6 +122,9 @@
 	width: 20px;
 	border-radius: 0px 40px 40px 0px;
 	background-color: #cecece;
+	background-image: url('../imgs/left.png');
+	background-repeat: no-repeat;
+	background-position: center;
 	display: none;
 }
 
@@ -137,6 +145,9 @@
 	width: 20px;
 	border-radius: 40px 0px 0px 40px;
 	background-color: #cecece;
+	background-image: url('../imgs/right.png');
+	background-repeat: no-repeat;
+	background-position: center;
 	display: none;
 }
 
@@ -156,6 +167,9 @@
 	height: 20px;
 	border-radius: 0px 0px 40px 40px;
 	background-color: #cecece;
+	background-image: url('../imgs/up.png');
+	background-repeat: no-repeat;
+	background-position: center;
 	display: none;
 }
 

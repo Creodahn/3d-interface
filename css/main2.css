@@ -7,8 +7,6 @@
 	-webkit-user-select: none; /* Chrome/Safari */        
 	-moz-user-select: none; /* Firefox */
 	-ms-user-select: none; /* IE10+ */
-
-	/* Rules below not implemented in browsers yet */
 	-o-user-select: none;
 	user-select: none;
 }
@@ -22,7 +20,7 @@
 #cube {
 	width: 100%;
 	height: 100%;
-	position:absolute;
+	position: absolute;
 	transform-style: preserve-3d;
 	transition: 0.3s;
 	cursor: pointer;
@@ -35,7 +33,9 @@
 	position: absolute;
 	border: 2px solid black;
 	color: #fff;
-	background-color: rgba(37, 160, 218, 0.5);
+	background-color: rgba(37, 160, 218, 1);
+	-webkit-backface-visibility: hidden; /* Chrome, Safari, Opera */
+   	backface-visibility: hidden;
 }
 
 #cube .front { 
@@ -79,10 +79,6 @@
 
 .show-6 {
 	transform: translateZ(-100px) rotateX(90deg);
-}
-
-.spin {
-	transform: translateZ(-100px) rotate3d(0, 0, 0, -360deg);
 }
 
 .downContainer {

@@ -1,198 +1,187 @@
-/*.container {
-	perspective: 800px;
-	position: absolute;
-	overflow: hidden;
-	width: 100%;
-	height: 100%;
-	background: transparent;
-	font-size: 37.5%;
+.container {
+	width: 200px;
+	height: 200px;
+	position: relative;
+	perspective: 1000px;
+	transform: translateZ(-100px);
+	-webkit-user-select: none; /* Chrome/Safari */        
+	-moz-user-select: none; /* Firefox */
+	-ms-user-select: none; /* IE10+ */
+	-o-user-select: none;
+	user-select: none;
 }
 
-.surface {
-	width: 80em;
-	height: 80em;
-	top: 50%;
-	left: 50%;
-	margin: -40em 0 0 -40em;
-	transition: 0.3s;
-}*/
- /*/!\ You need to add vendor prefixes in order to render the CSS properly (or simply use http://leaverou.github.io/prefixfree/) /!\ */
-#tridiv {
-	perspective: 800px;
-	position: absolute;
-	overflow: hidden;
+.face {	
+	text-align: center;
+	margin: 67px;
+	font-size: 42px;
+}
+
+.num {	
+	cursor: pointer;
+}
+
+#cube {
 	width: 100%;
 	height: 100%;
-	background: transparent;
-	font-size: 37.5%;
+	position: absolute;
+	transform-style: preserve-3d;
+	transition: 0.3s;
 }
-.face {
-  box-shadow: inset 0 0 0 1px rgba(0, 0, 0, 0.4);
+
+#cube figure {
+	width: 196px;
+	height: 196px;
+	display: block;
+	position: absolute;
+	border: 2px solid black;
+	color: #fff;
+	background-color: rgba(37, 160, 218, 1);
+	-webkit-backface-visibility: hidden; /* Chrome, Safari, Opera */
+   	backface-visibility: hidden;
 }
-.scene, .shape, .face, .face-wrapper, .cr {
-  position: absolute;
-  transform-style: preserve-3d;
+
+#cube .front { 
+	transform: rotateY(0deg) translateZ(100px);
 }
-.scene {
-  width: 80em;
-  height: 80em;
-  top: 50%;
-  left: 50%;
-  margin: -40em 0 0 -40em;
-  transition: 0.3s;
+#cube .back { 
+	transform: rotateX(180deg) translateZ(100px);
 }
-.shape {
-  top: 50%;
-  left: 50%;
-  width: 0;
-  height: 0;
-  transform-origin: 50%;
+#cube .right { 
+	transform: rotateY(90deg) translateZ(100px);
 }
-.face, .face-wrapper {
-  overflow: hidden;
-  transform-origin: 0 0;
-  backface-visibility: hidden;
-  /* hidden by default, prevent blinking and other weird rendering glitches */
+#cube .left { 
+	transform: rotateY(-90deg) translateZ(100px);
 }
-.face {
-  background-size: 100% 100%!important;
-  background-position: center;
+#cube .top { 
+	transform: rotateX(90deg) translateZ(100px); 
 }
-.face-wrapper .face {
-  left: 100%;
-  width: 100%;
-  height: 100%
+#cube .bottom { 
+	transform: rotateX(-90deg) translateZ(100px);
 }
-.photon-shader {
-  position: absolute;
-  left: 0;
-  top: 0;
-  width: 100%;
-  height: 100%
+
+.show-1 {
+	transform: translateZ(-100px) rotateY(0deg);
 }
-.side {
-  left: 50%;
+
+.show-2 {
+	transform: translateZ(-100px) rotateX(-180deg);
 }
-.cr, .cr .side {
-  height: 100%;
+
+.show-3 {
+	transform: translateZ(-100px) rotateY(-90deg);
 }
-[class*="cuboid"] .ft, [class*="cuboid"] .bk {
-  width: 100%;
-  height: 100%;
+
+.show-4 {
+	transform: translateZ(-100px) rotateY(90deg);
 }
-[class*="cuboid"] .bk {
-  left: 100%;
+
+.show-5 {
+	transform: translateZ(-100px) rotateX(-90deg);
 }
-[class*="cuboid"] .rt {
-  transform: rotateY(-90deg) translateX(-50%);
+
+.show-6 {
+	transform: translateZ(-100px) rotateX(90deg);
 }
-[class*="cuboid"] .lt {
-  transform: rotateY(90deg) translateX(-50%);
+.rot {
+	z-index: 50;
+	cursor: pointer;
 }
-[class*="cuboid"] .tp {
-  transform: rotateX(90deg) translateY(-50%);
+.downContainer {
+	position: absolute;
+	left: 0px;
+	bottom: 0px;
+	width: 100%;
+	height: 20px;
 }
-[class*="cuboid"] .bm {
-  transform: rotateX(-90deg) translateY(-50%);
+
+.turnDown {
+	position: absolute;
+	bottom: 0px;
+	left: 80px;
+	width: 40px;
+	height: 20px;
+	border-radius: 40px 40px 0px 0px;
+	background-color: #cecece;
+	background-image: url('../imgs/down.png');
+	background-repeat: no-repeat;
+	background-position: center;
+	transition: 0.3s;
+	display: none;
 }
-[class*="cuboid"] .lt {
-  left: 100%;
+
+.leftContainer {
+	position: absolute;
+	left: 0px;
+	top: 0px;
+	height: 100%;
+	width: 20px;
 }
-[class*="cuboid"] .bm {
-  top: 100%;
+
+.turnLeft {
+	position: absolute;
+	left: 0px;
+	top: 80px;
+	float: left;
+	height: 40px;
+	width: 20px;
+	border-radius: 0px 40px 40px 0px;
+	background-color: #cecece;
+	background-image: url('../imgs/left.png');
+	background-repeat: no-repeat;
+	background-position: center;
+	transition: 0.3s;
+	display: none;
 }
-/* .cub-1 styles */
-.cub-1 {
-  transform:translate3D(0em, 0em, 0em) rotateX(0deg) rotateY(0deg) rotateZ(60deg);
-  opacity:0.58;
-  width:8em;
-  height:8em;
-  margin:-4em 0 0 -4em;
-  transform-style: preserve-3d;
+
+.rightContainer {
+	position: absolute;
+	right: 0px;
+	top: 0px;
+	height: 100%;
+	width: 20px;
 }
-.cub-1 .ft {
-  transform:translateZ(4em);
+
+.turnRight {
+	position: absolute;
+	right: 0px;
+	top: 80px;
+	float: right;
+	height: 40px;
+	width: 20px;
+	border-radius: 40px 0px 0px 40px;
+	background-color: #cecece;
+	background-image: url('../imgs/right.png');
+	background-repeat: no-repeat;
+	background-position: center;
+	transition: 0.3s;
+	display: none;
 }
-.cub-1 .bk {
-  transform:translateZ(-4em) rotateY(180deg);
+
+.upContainer {
+	position: absolute;
+	left: 0px;
+	top: 0px;
+	width: 100%;
+	height: 20px;
 }
-.cub-1 .rt, .cub-1 .lt {
-  width:8em;
-  height:8em;
+
+.turnUp {
+	position: absolute;
+	left: 80px;
+	top: 0px;
+	width: 40px;
+	height: 20px;
+	border-radius: 0px 0px 40px 40px;
+	background-color: #cecece;
+	background-image: url('../imgs/up.png');
+	background-repeat: no-repeat;
+	background-position: center;
+	transition: 0.3s;
+	display: none;
 }
-.cub-1 .tp, .cub-1 .bm {
-  width:8em;
-  height:8em;
-}
-.cub-1 .face {
-  background-color:#25a0da;
-}
-.cub-1 .ft {
-  width:8em;
-  margin-left:0em;
-}
-.cub-1 .bk {
-  width:8em;
-  margin-left:0em;
-}
-.cub-1 .rt, .cub-1 .lt {
-  width:8em;
-}
-.cub-1 .tp, .cub-1 .bm, .cub-1 .tp .photon-shader, .cub-1 .bm .photon-shader {
-  border-radius:0em;
-}
-.cub-1 .cr {
-  width:0em;
-  left:0em;
-}
-.cub-1 .cr-0 {
-  transform: translate3D(8em, 0, 4em);
-}
-.cub-1 .cr-1 {
-  transform: translate3D(8em, 0, -4em);
-}
-.cub-1 .cr-2 {
-  transform: translate3D(0, 0, -4em);
-}
-.cub-1 .cr-3 {
-  transform: translate3D(0, 0, 4em);
-}
-.cub-1 .cr-0 .s0 {
-  transform: rotateY(15deg) translate3D(-50%, 0, -0.025em);
-}
-.cub-1 .cr-0 .s1 {
-  transform: rotateY(45deg) translate3D(-50%, 0, -0.025em);
-}
-.cub-1 .cr-0 .s2 {
-  transform: rotateY(75deg) translate3D(-50%, 0, -0.025em);
-}
-.cub-1 .cr-1 .s0 {
-  transform: rotateY(105deg) translate3D(-50%, 0, -0.025em);
-}
-.cub-1 .cr-1 .s1 {
-  transform: rotateY(135deg) translate3D(-50%, 0, -0.025em);
-}
-.cub-1 .cr-1 .s2 {
-  transform: rotateY(165deg) translate3D(-50%, 0, -0.025em);
-}
-.cub-1 .cr-2 .s0 {
-  transform: rotateY(195deg) translate3D(-50%, 0, -0.025em);
-}
-.cub-1 .cr-2 .s1 {
-  transform: rotateY(225deg) translate3D(-50%, 0, -0.025em);
-}
-.cub-1 .cr-2 .s2 {
-  transform: rotateY(255deg) translate3D(-50%, 0, -0.025em);
-}
-.cub-1 .cr-3 .s0 {
-  transform: rotateY(285deg) translate3D(-50%, 0, -0.025em);
-}
-.cub-1 .cr-3 .s1 {
-  transform: rotateY(315deg) translate3D(-50%, 0, -0.025em);
-}
-.cub-1 .cr-3 .s2 {
-  transform: rotateY(345deg) translate3D(-50%, 0, -0.025em);
-}
-.cub-1 .side {
-  width:0.025em;
+
+#outside {
+	margin-top: calc(50vh - 100px);
+	margin-left: calc(50vw - 100px);
 }

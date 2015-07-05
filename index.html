@@ -1,85 +1,119 @@
 <html>
 	<head>
-		<title>3D Test</title>
+		<title>3D Test 2</title>
 		<meta charset="UTF-8">
-		<link rel="stylesheet" type="text/css" href="css/main.css" />
+		<link rel="stylesheet" type="text/css" href="css/main2.css" />
 		<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js" ></script>
-		<script src="js/main.js"> </script>
+		<script src="js/main2.js"> </script>
 	</head>
 	<body>
-		<!--<div class="container">
-			<div class="surface"> </div>
-		</div>-->
-		<div id="tridiv">
-		  <div class="scene" style="-webkit-transform:rotateX(-45deg) rotateY(-45deg); -moz-transform:rotateX(-45deg) rotateY(-45deg); -ms-transform:rotateX(-45deg) rotateY(-45deg); transform:rotateX(-45deg) rotateY(-45deg); ">
-			<div class="shape cuboid-1 cub-1">
-			  <div class="face ft">
-				<div class="photon-shader" style="background-color: rgba(0, 0, 0, 0.14902);"></div>
-			  </div>
-			  <div class="face bk">
-				<div class="photon-shader" style="background-color: rgba(0, 0, 0, 0.14902);"></div>
-			  </div>
-			  <div class="face rt">
-				<div class="photon-shader" style="background-color: rgba(0, 0, 0, 0.14902);"></div>
-			  </div>
-			  <div class="face lt">
-				<div class="photon-shader" style="background-color: rgba(0, 0, 0, 0.14902);"></div>
-			  </div>
-			  <div class="face bm">
-				<div class="photon-shader" style="background-color: rgba(0, 0, 0, 0.14902);"></div>
-			  </div>
-			  <div class="face tp">
-				<div class="photon-shader" style="background-color: rgba(0, 0, 0, 0.14902);"></div>
-			  </div>
-			  <div class="cr cr-0">
-				<div class="face side s0">
-				  <div class="photon-shader" style="background-color: rgba(0, 0, 0, 0.184314);"></div>
+		<div id="outside">
+			<section class="Container">
+				<div id="cube">
+					<figure class="front">
+						<div class="upContainer">
+							<div class="rot turnUp"></div>
+						</div>
+						<div class="leftContainer">
+							<div class="rot turnLeft"></div>
+						</div>
+						<div class="rightContainer">
+							<div class="rot turnRight"></div>
+						</div>
+						<div class="downContainer">
+							<div class="rot turnDown"></div>
+						</div>
+						<div class="face">
+							<div class="num">1</div>
+						</div>
+					</figure>
+					<figure class="back">
+						<div class="upContainer">
+							<div class="rot turnUp"></div>
+						</div>
+						<div class="leftContainer">
+							<div class="rot turnLeft"></div>
+						</div>
+						<div class="rightContainer">
+							<div class="rot turnRight"></div>
+						</div>
+						<div class="downContainer">
+							<div class="rot turnDown"></div>
+						</div>
+						<div class="face">
+							<div class="num">2</div>
+						</div>
+					</figure>
+					<figure class="right">
+						<div class="upContainer">
+							<div class="rot turnUp"></div>
+						</div>
+						<div class="leftContainer">
+							<div class="rot turnLeft"></div>
+						</div>
+						<div class="rightContainer">
+							<div class="rot turnRight"></div>
+						</div>
+						<div class="downContainer">
+							<div class="rot turnDown"></div>
+						</div>
+						<div class="face">
+							<div class="num">3</div>
+						</div>
+					</figure>
+					<figure class="left">
+						<div class="upContainer">
+							<div class="rot turnUp"></div>
+						</div>
+						<div class="leftContainer">
+							<div class="rot turnLeft"></div>
+						</div>
+						<div class="rightContainer">
+							<div class="rot turnRight"></div>
+						</div>
+						<div class="downContainer">
+							<div class="rot turnDown"></div>
+						</div>
+						<div class="face">
+							<div class="num">4</div>
+						</div>
+					</figure>
+					<figure class="top">
+						<div class="upContainer">
+							<div class="rot turnUp"></div>
+						</div>
+						<div class="leftContainer">
+							<div class="rot turnLeft"></div>
+						</div>
+						<div class="rightContainer">
+							<div class="rot turnRight"></div>
+						</div>
+						<div class="downContainer">
+							<div class="rot turnDown"></div>
+						</div>
+						<div class="face">
+							<div class="num">5</div>
+						</div>
+					</figure>
+					<figure class="bottom">
+						<div class="upContainer">
+							<div class="rot turnUp"></div>
+						</div>
+						<div class="leftContainer">
+							<div class="rot turnLeft"></div>
+						</div>
+						<div class="rightContainer">
+							<div class="rot turnRight"></div>
+						</div>
+						<div class="downContainer">
+							<div class="rot turnDown"></div>
+						</div>
+						<div class="face">
+							<div class="num">6</div>
+						</div>
+					</figure>
 				</div>
-				<div class="face side s1">
-				  <div class="photon-shader" style="background-color: rgba(0, 0, 0, 0.270588);"></div>
-				</div>
-				<div class="face side s2">
-				  <div class="photon-shader" style="background-color: rgba(0, 0, 0, 0.364706);"></div>
-				</div>
-			  </div>
-			  <div class="cr cr-1">
-				<div class="face side s0">
-				  <div class="photon-shader" style="background-color: rgba(0, 0, 0, 0.443137);"></div>
-				</div>
-				<div class="face side s1">
-				  <div class="photon-shader" style="background-color: rgba(0, 0, 0, 0.486275);"></div>
-				</div>
-				<div class="face side s2">
-				  <div class="photon-shader" style="background-color: rgba(0, 0, 0, 0.47451);"></div>
-				</div>
-			  </div>
-			  <div class="cr cr-2">
-				<div class="face side s0">
-				  <div class="photon-shader" style="background-color: rgba(0, 0, 0, 0.415686);"></div>
-				</div>
-				<div class="face side s1">
-				  <div class="photon-shader" style="background-color: rgba(0, 0, 0, 0.32549);"></div>
-				</div>
-				<div class="face side s2">
-				  <div class="photon-shader" style="background-color: rgba(0, 0, 0, 0.235294);"></div>
-				</div>
-			  </div>
-			  <div class="cr cr-3">
-				<div class="face side s0">
-				  <div class="photon-shader" style="background-color: rgba(0, 0, 0, 0.156863);"></div>
-				</div>
-				<div class="face side s1">
-				  <div class="photon-shader" style="background-color: rgba(0, 0, 0, 0.109804);"></div>
-				</div>
-				<div class="face side s2">
-				  <div class="photon-shader" style="background-color: rgba(0, 0, 0, 0.121569);"></div>
-				</div>
-			  </div>
-			</div>
-		  </div>
+			</section>
 		</div>
-		<script>
-			//$('.scene').click (rotate (0));
-		</script>
 	</body>
 </html>

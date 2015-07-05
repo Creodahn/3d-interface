@@ -17,13 +17,16 @@
 	font-size: 42px;
 }
 
+.num {	
+	cursor: pointer;
+}
+
 #cube {
 	width: 100%;
 	height: 100%;
 	position: absolute;
 	transform-style: preserve-3d;
 	transition: 0.3s;
-	cursor: pointer;
 }
 
 #cube figure {
@@ -82,6 +85,7 @@
 }
 .rot {
 	z-index: 50;
+	cursor: pointer;
 }
 .downContainer {
 	position: absolute;
@@ -102,6 +106,7 @@
 	background-image: url('../imgs/down.png');
 	background-repeat: no-repeat;
 	background-position: center;
+	transition: 0.3s;
 	display: none;
 }
 
@@ -125,6 +130,7 @@
 	background-image: url('../imgs/left.png');
 	background-repeat: no-repeat;
 	background-position: center;
+	transition: 0.3s;
 	display: none;
 }
 
@@ -148,6 +154,7 @@
 	background-image: url('../imgs/right.png');
 	background-repeat: no-repeat;
 	background-position: center;
+	transition: 0.3s;
 	display: none;
 }
 
@@ -170,6 +177,7 @@
 	background-image: url('../imgs/up.png');
 	background-repeat: no-repeat;
 	background-position: center;
+	transition: 0.3s;
 	display: none;
 }
 

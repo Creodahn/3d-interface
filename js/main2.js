@@ -49,7 +49,6 @@ $(document).ready (function () {
 	$('.rot').click (function (e) {
 		e.stopPropagation ();
 		rotation ($(e.target).prop ('class').replace ('rot turn', ''));
-		$('.' + $(e.target).prop ('class')).css ('display', 'none');
 	});
 });
 
@@ -59,5 +58,4 @@ function rotation (direction) {
 	var newCss = 'show-' + cube [currSide] [direction];
 	$('#cube').removeClass ();
 	$('#cube').addClass (newCss);
-	//console.log (cube [currSide] [direction]);
 }
